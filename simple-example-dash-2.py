@@ -6,6 +6,7 @@ import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv')
 
 app = Dash(__name__)
+server = app.server
 
 app.layout = html.Div([
     dcc.Graph(id='graph-with-slider'),
@@ -36,4 +37,4 @@ def update_figure(selected_year):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
